@@ -182,21 +182,6 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <SectionHead k="04" t="Охрана существующих памятников и проектные ограничения" />
-        <div className="grid gap-10 lg:grid-cols-2">
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            Если на территории или вблизи вашего участка уже расположены известные объекты историко-культурного наследия, деятельность должна вестись с соблюдением охранных зон (не менее 50 метров от границ памятника). Проектная документация должна полностью исключать угрозу сохранности.
-          </p>
-          <div className="rounded-sm border border-gold/50 bg-card p-8">
-            <h3 className="font-semibold text-gold">Что делать, если охранную зону невозможно обойти?</h3>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Применяется законный механизм полного археологического исследования (охранных раскопок), после чего объект может быть официально выведен из списков учета.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <footer id="contacts" className="border-t border-charcoal-foreground/10 bg-charcoal text-charcoal-foreground/75">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3">
           <div>
