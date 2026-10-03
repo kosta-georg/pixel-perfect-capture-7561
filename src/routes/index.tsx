@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Pickaxe, Landmark, MapPinned, BookOpen, ShieldCheck, Award, FileCheck2, Clock, Phone, Mail, Send, MapPin } from "lucide-react";
+import { Pickaxe, MapPinned, BookOpen, FileCheck2, Phone, Mail, Send, MapPin } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 
 export const Route = createFileRoute("/")({
@@ -30,30 +30,25 @@ function Logo({ className = "h-9 w-9" }: { className?: string }) {
 }
 
 const nav = [
-  ["Услуги", "#services"],
   ["О нас", "#about"],
   ["Законы", "#laws"],
+  ["Этапы", "#services"],
   ["Контакты", "#contacts"],
 ];
 
-const services = [
-  { icon: Pickaxe, t: "Археологическая экспертиза", d: "Полевые исследования, шурфовка и разведка объектов археологического наследия на участке." },
-  { icon: Landmark, t: "Архитектурная экспертиза", d: "Оценка зданий и сооружений, имеющих историко-архитектурную ценность." },
-  { icon: MapPinned, t: "Экспертиза земельных участков", d: "Проверка участка перед строительством для исключения рисков остановки проекта." },
-  { icon: BookOpen, t: "Научное сопровождение", d: "Археологический надзор и научное сопровождение на всех этапах строительных работ." },
-];
-
-const why = [
-  { icon: ShieldCheck, t: "Лицензированные партнеры", d: "Работаем с организациями, имеющими государственную лицензию." },
-  { icon: Award, t: "Опытные аттестованные археологи", d: "Специалисты с многолетней полевой практикой." },
-  { icon: FileCheck2, t: "Гарантия прохождения госорганов", d: "Документация готовится в строгом соответствии с требованиями." },
-  { icon: Clock, t: "Соблюдение сроков", d: "Фиксированные сроки в договоре — стройка не простаивает." },
-];
-
 const laws = [
-  "Закон РК «Об охране и использовании объектов историко-культурного наследия» от 26.12.2019 № 288-VI",
-  "Земельный кодекс Республики Казахстан",
-  "Правила проведения историко-культурной экспертизы, утв. уполномоченным органом",
+  ["Закон РК «Об охране и использовании объектов историко-культурного наследия» (статья 30)", "до отвода земельных участков под строительство в обязательном порядке проводятся археологические работы для выявления объектов наследия."],
+  ["Земельный Кодекс РК (статья 127)", "земли историко-культурного назначения находятся под особой защитой государства."],
+];
+
+const stages = [
+  { icon: BookOpen, t: "Кабинетный этап (предварительный анализ)", d: "Глубокая аналитическая работа с применением современных и архивных данных. Проводится анализ космоснимков, актуальных и исторических топографических карт, государственных списков памятников, сводов историко-культурного наследия, научных отчетов и других архивных материалов." },
+  { icon: Pickaxe, t: "Полевые исследования (археологическая разведка)", d: "Выезд специалистов на объект и детальное обследование территории. Включает визуальный осмотр всего участка, сбор подъемного материала (артефактов) и детальную фотофиксацию." },
+];
+
+const scenarios = [
+  { icon: FileCheck2, t: "Сценарий А («Участок чист»)", d: "Если в ходе работ не обнаружены памятники истории и культуры, формируется официальное заключение об отсутствии объектов ИКН с фотоотчетом. Документ направляется в акимат для получения легитимного подтверждения." },
+  { icon: MapPinned, t: "Сценарий Б («Выявлены новые объекты»)", d: "Если обнаруживаются следы древности, специалисты выполняют инструментальную привязку с помощью GPS-оборудования и определяют границы для постановки на предварительный государственный учет." },
 ];
 
 const btnGold = "inline-flex items-center justify-center rounded-sm bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90";
@@ -83,68 +78,104 @@ function Index() {
       <section className="relative overflow-hidden bg-charcoal text-charcoal-foreground">
         <img src={hero} alt="Историческое городище в степи Казахстана" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover opacity-45" />
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-charcoal/20" />
-        <div className="relative mx-auto max-w-7xl px-6 py-28 md:py-40">
-          <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Республика Казахстан · B2B</p>
-          <h1 className="max-w-3xl text-4xl font-bold leading-tight md:text-6xl">
-            Историко-культурная экспертиза для застройщиков в Казахстане.
-            <span className="mt-2 block text-gold">Быстро, официально, без рисков для проекта.</span>
+        <div className="relative mx-auto max-w-7xl px-6 py-28 md:py-36">
+          <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Республика Казахстан</p>
+          <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
+            Историко-культурная экспертиза и археологические изыскания в Казахстане
           </h1>
-          <p className="mt-8 max-w-2xl text-lg text-charcoal-foreground/80">
-            Мы берем на себя все этапы — от полевых работ до получения Заключения госоргана. Работаем строго по лицензии.
+          <p className="mt-8 max-w-3xl text-lg text-charcoal-foreground/80">
+            Проведение профессиональной историко-культурной экспертизы и археологических изысканий на всей территории Казахстана. Мы обеспечиваем полное научное сопровождение объектов строительства и недропользования, применяя современные методы документации и оборудование, соответствующее государственным и мировым стандартам.
           </p>
+          <blockquote className="mt-8 max-w-2xl border-l-2 border-gold pl-5 text-lg italic text-gold">
+            «Раскрываем тайны прошлого — сохраняем культурное наследие для будущего».
+          </blockquote>
           <div className="mt-10 flex flex-wrap gap-4">
             <a href="#contacts" className={btnGold}>Заказать экспертизу</a>
-            <a href="#contacts" className={btnGhost}>Узнать стоимость</a>
+            <a href="#contacts" className={btnGhost}>Рассчитать стоимость</a>
           </div>
         </div>
       </section>
 
-      <section id="services" className="mx-auto max-w-7xl px-6 py-24">
-        <SectionHead k="01" t="Наши услуги" />
-        <div className="grid gap-px overflow-hidden rounded-sm border bg-border sm:grid-cols-2 lg:grid-cols-4">
-          {services.map(({ icon: I, t, d }) => (
-            <div key={t} className="bg-background p-8">
-              <I className="h-8 w-8 text-gold" strokeWidth={1.5} />
-              <h3 className="mt-6 text-lg font-semibold">{t}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{d}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="about" className="bg-card py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <SectionHead k="02" t="Почему мы?" />
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {why.map(({ icon: I, t, d }) => (
-              <div key={t} className="border-t-2 border-gold pt-6">
-                <I className="h-6 w-6 text-foreground" strokeWidth={1.5} />
-                <h3 className="mt-4 font-semibold">{t}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{d}</p>
+      <section id="about" className="mx-auto max-w-7xl px-6 py-24">
+        <SectionHead k="01" t="Экспертность и стандарты отрасли" />
+        <div className="grid gap-12 lg:grid-cols-3">
+          <p className="text-lg leading-relaxed text-muted-foreground lg:col-span-2">
+            Мы специализируемся на проведении комплексных историко-культурных и археологических экспертиз любой сложности для всех видов строительства и недропользования по всему Казахстану на протяжении 20 лет. За нашими плечами — более тысячи реализованных проектов различного масштаба. Мы сотрудничаем с ведущими специалистами в области археологии и архитектуры по всей стране, которые принимали непосредственное участие в создании профильных методик и составлении сводов памятников истории и культуры для большинства регионов республики. Кроме того, у нас налажены прямые рабочие контакты с местными исполнительными органами, отвечающими за охрану исторического наследия.
+          </p>
+          <div className="grid gap-px self-start overflow-hidden rounded-sm border bg-border">
+            {[["20 лет", "на рынке экспертиз"], ["1000+", "реализованных проектов"]].map(([n, l]) => (
+              <div key={n} className="bg-background p-8">
+                <div className="text-4xl font-bold text-gold">{n}</div>
+                <div className="mt-2 text-sm text-muted-foreground">{l}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="laws" className="mx-auto max-w-7xl px-6 py-24">
-        <SectionHead k="03" t="Законодательная база" />
-        <ul className="divide-y border-y">
-          {laws.map((l, i) => (
-            <li key={l} className="flex gap-6 py-5">
-              <span className="font-mono text-sm text-gold">{String(i + 1).padStart(2, "0")}</span>
-              <span>{l}</span>
-            </li>
-          ))}
-        </ul>
+      <section id="laws" className="bg-card py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <SectionHead k="02" t="Законодательная база" />
+          <p className="mb-10 max-w-3xl text-muted-foreground">
+            Историко-культурная экспертиза (включая археологическую составляющую) проводится в строгом соответствии с действующим законодательством Республики Казахстан:
+          </p>
+          <ul className="divide-y border-y">
+            {laws.map(([t, d], i) => (
+              <li key={t} className="flex gap-6 py-6">
+                <span className="font-mono text-sm text-gold">{String(i + 1).padStart(2, "0")}</span>
+                <span><span className="font-semibold">{t}:</span> <span className="text-muted-foreground">{d}</span></span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
-      <section className="bg-charcoal text-charcoal-foreground">
-        <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-6 py-20 md:flex-row md:items-center md:justify-between">
-          <h2 className="max-w-2xl text-2xl font-bold leading-snug md:text-3xl">
-            Не останавливайте стройку из-за бюрократии. <span className="text-gold">Получите консультацию эксперта за 5 минут.</span>
-          </h2>
-          <a href="tel:+77000000000" className={btnGold}>Получить консультацию</a>
+      <section id="services" className="mx-auto max-w-7xl px-6 py-24">
+        <SectionHead k="03" t="Методика и этапы проведения экспертизы" />
+        <p className="mb-10 max-w-3xl text-muted-foreground">
+          Чтобы исключить любые риски остановки проекта, штрафов и задержек, мы выстроили четкий поэтапный алгоритм реализации экспертизы под ключ:
+        </p>
+        <div className="grid gap-px overflow-hidden rounded-sm border bg-border md:grid-cols-2">
+          {stages.map(({ icon: I, t, d }, i) => (
+            <div key={t} className="bg-background p-8">
+              <div className="flex items-center gap-4">
+                <span className="font-mono text-sm text-gold">Этап {i + 1}</span>
+                <I className="h-6 w-6 text-gold" strokeWidth={1.5} />
+              </div>
+              <h3 className="mt-5 text-lg font-semibold">{t}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-card py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <SectionHead k="04" t="Возможные сценарии по итогам экспертизы" />
+          <div className="grid gap-10 md:grid-cols-2">
+            {scenarios.map(({ icon: I, t, d }) => (
+              <div key={t} className="border-t-2 border-gold pt-6">
+                <I className="h-6 w-6 text-foreground" strokeWidth={1.5} />
+                <h3 className="mt-4 text-lg font-semibold">{t}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-24">
+        <SectionHead k="05" t="Охрана существующих памятников и проектные ограничения" />
+        <div className="grid gap-10 lg:grid-cols-2">
+          <p className="text-lg leading-relaxed text-muted-foreground">
+            Если на территории или вблизи вашего участка уже расположены известные объекты историко-культурного наследия, деятельность должна вестись с соблюдением охранных зон (не менее 50 метров от границ памятника). Проектная документация должна полностью исключать угрозу сохранности.
+          </p>
+          <div className="rounded-sm border border-gold/50 bg-card p-8">
+            <h3 className="font-semibold text-gold">Что делать, если охранную зону невозможно обойти?</h3>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              Применяется законный механизм полного археологического исследования (охранных раскопок), после чего объект может быть официально выведен из списков учета.
+            </p>
+          </div>
         </div>
       </section>
 
