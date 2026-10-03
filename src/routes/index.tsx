@@ -82,7 +82,7 @@ function Index() {
 
       <section className="relative overflow-hidden bg-charcoal text-charcoal-foreground">
         <img src={hero} alt="Историческое городище в степи Казахстана" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover opacity-45" />
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-navy/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-charcoal/20" />
         <div className="relative mx-auto max-w-7xl px-6 py-28 md:py-40">
           <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Республика Казахстан · B2B</p>
           <h1 className="max-w-3xl text-4xl font-bold leading-tight md:text-6xl">
