@@ -73,10 +73,6 @@ const stages = [
   { icon: Send, t: "Финал", d: "Получение согласования Заключения в местном исполнительном органе." },
 ];
 
-const scenarios = [
-  { icon: FileCheck2, t: "Сценарий А («Участок чист»)", d: "Если в ходе работ не обнаружены памятники истории и культуры, формируется официальное заключение об отсутствии объектов ИКН с фотоотчетом. Документ направляется в акимат для получения легитимного подтверждения." },
-  { icon: MapPinned, t: "Сценарий Б («Выявлены новые объекты»)", d: "Если обнаруживаются следы древности, специалисты выполняют инструментальную привязку с помощью GPS-оборудования и определяют границы для постановки на предварительный государственный учет." },
-];
 
 const btnGold = "inline-flex items-center justify-center rounded-sm bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90";
 const btnGhost = "inline-flex items-center justify-center rounded-sm border border-charcoal-foreground/40 px-6 py-3 text-sm font-semibold text-charcoal-foreground transition hover:bg-charcoal-foreground/10";
