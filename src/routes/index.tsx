@@ -62,34 +62,34 @@ const btnGhost = "inline-flex items-center justify-center rounded-sm border bord
 function Index() {
   return (
     <div className="min-h-screen">
-      <header className="sticky top-0 z-50 border-b border-navy-foreground/10 bg-navy/95 text-navy-foreground backdrop-blur">
+      <header className="sticky top-0 z-50 border-b border-charcoal-foreground/10 bg-charcoal/95 text-charcoal-foreground backdrop-blur">
         <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-6 px-6 py-3">
           <a href="#" className="flex items-center gap-3">
             <Logo />
             <span className="leading-tight">
               <span className="block text-lg font-bold tracking-wide">ИКЭ</span>
-              <span className="hidden text-xs text-navy-foreground/70 sm:block">Историко-Культурная Экспертиза</span>
+              <span className="hidden text-xs text-charcoal-foreground/70 sm:block">Историко-Культурная Экспертиза</span>
             </span>
           </a>
           <nav className="hidden gap-8 text-sm md:flex">
             {nav.map(([l, h]) => (
-              <a key={h} href={h} className="text-navy-foreground/80 transition hover:text-gold">{l}</a>
+              <a key={h} href={h} className="text-charcoal-foreground/80 transition hover:text-gold">{l}</a>
             ))}
           </nav>
           <a href="#contacts" className={btnGold}>Оставить заявку</a>
         </div>
       </header>
 
-      <section className="relative overflow-hidden bg-navy text-navy-foreground">
+      <section className="relative overflow-hidden bg-charcoal text-charcoal-foreground">
         <img src={hero} alt="Историческое городище в степи Казахстана" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover opacity-45" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-navy/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-navy/20" />
         <div className="relative mx-auto max-w-7xl px-6 py-28 md:py-40">
           <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Республика Казахстан · B2B</p>
           <h1 className="max-w-3xl text-4xl font-bold leading-tight md:text-6xl">
             Историко-культурная экспертиза для застройщиков в Казахстане.
             <span className="mt-2 block text-gold">Быстро, официально, без рисков для проекта.</span>
           </h1>
-          <p className="mt-8 max-w-2xl text-lg text-navy-foreground/80">
+          <p className="mt-8 max-w-2xl text-lg text-charcoal-foreground/80">
             Мы берем на себя все этапы — от полевых работ до получения Заключения госоргана. Работаем строго по лицензии.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
@@ -139,7 +139,7 @@ function Index() {
         </ul>
       </section>
 
-      <section className="bg-navy text-navy-foreground">
+      <section className="bg-charcoal text-charcoal-foreground">
         <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-6 py-20 md:flex-row md:items-center md:justify-between">
           <h2 className="max-w-2xl text-2xl font-bold leading-snug md:text-3xl">
             Не останавливайте стройку из-за бюрократии. <span className="text-gold">Получите консультацию эксперта за 5 минут.</span>
@@ -148,10 +148,10 @@ function Index() {
         </div>
       </section>
 
-      <footer id="contacts" className="border-t border-navy-foreground/10 bg-navy text-navy-foreground/75">
+      <footer id="contacts" className="border-t border-charcoal-foreground/10 bg-charcoal text-charcoal-foreground/75">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3">
           <div>
-            <div className="flex items-center gap-3 text-navy-foreground"><Logo className="h-8 w-8" /><span className="font-bold">ИКЭ</span></div>
+            <div className="flex items-center gap-3 text-charcoal-foreground"><Logo className="h-8 w-8" /><span className="font-bold">ИКЭ</span></div>
             <p className="mt-4 text-sm">Историко-Культурная Экспертиза</p>
             <p className="mt-2 text-sm">Лицензия № ______ от __.__.____</p>
           </div>
@@ -163,7 +163,7 @@ function Index() {
           <div className="text-sm md:text-right">
             <div className="flex gap-3 md:justify-end">
               {[Send, Phone, Mail].map((I, i) => (
-                <a key={i} href="#" aria-label="Контакт" className="rounded-sm border border-navy-foreground/20 p-2 transition hover:border-gold hover:text-gold"><I className="h-4 w-4" /></a>
+                <a key={i} href="#" aria-label="Контакт" className="rounded-sm border border-charcoal-foreground/20 p-2 transition hover:border-gold hover:text-gold"><I className="h-4 w-4" /></a>
               ))}
             </div>
             <a href="#" className="mt-4 block hover:text-gold">Политика конфиденциальности</a>
