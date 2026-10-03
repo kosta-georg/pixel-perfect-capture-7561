@@ -170,18 +170,17 @@ function Index() {
 
       <section id="services" className="mx-auto max-w-7xl px-6 py-24">
         <SectionHead k="03" t="Методика и этапы проведения экспертизы" />
-        <p className="mb-10 max-w-3xl text-muted-foreground">
-          Чтобы исключить любые риски остановки проекта, штрафов и задержек, мы выстроили четкий поэтапный алгоритм реализации экспертизы под ключ:
-        </p>
-        <div className="grid gap-px overflow-hidden rounded-sm border bg-border md:grid-cols-2">
+        <div className="mx-auto max-w-3xl divide-y divide-charcoal-foreground/10 rounded-sm border border-charcoal-foreground/10">
           {stages.map(({ icon: I, t, d }, i) => (
-            <div key={t} className="bg-background p-8">
-              <div className="flex items-center gap-4">
-                <span className="font-mono text-sm text-gold">Этап {i + 1}</span>
-                <I className="h-6 w-6 text-gold" strokeWidth={1.5} />
+            <div key={t} className="flex gap-6 bg-background p-8">
+              <div className="flex w-10 shrink-0 flex-col items-center">
+                <span className="font-mono text-sm text-gold">0{i + 1}</span>
+                <I className="mt-2 h-6 w-6 text-gold" strokeWidth={1.5} />
               </div>
-              <h3 className="mt-5 text-lg font-semibold">{t}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{d}</p>
+              <div>
+                <h3 className="text-lg font-semibold">{t}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground"><span className="font-semibold text-foreground">Задачи:</span> {d}</p>
+              </div>
             </div>
           ))}
         </div>
