@@ -186,23 +186,8 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-card py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <SectionHead k="04" t="Возможные сценарии по итогам экспертизы" />
-          <div className="grid gap-10 md:grid-cols-2">
-            {scenarios.map(({ icon: I, t, d }) => (
-              <div key={t} className="border-t-2 border-gold pt-6">
-                <I className="h-6 w-6 text-foreground" strokeWidth={1.5} />
-                <h3 className="mt-4 text-lg font-semibold">{t}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="mx-auto max-w-7xl px-6 py-24">
-        <SectionHead k="05" t="Охрана существующих памятников и проектные ограничения" />
+        <SectionHead k="04" t="Охрана существующих памятников и проектные ограничения" />
         <div className="grid gap-10 lg:grid-cols-2">
           <p className="text-lg leading-relaxed text-muted-foreground">
             Если на территории или вблизи вашего участка уже расположены известные объекты историко-культурного наследия, деятельность должна вестись с соблюдением охранных зон (не менее 50 метров от границ памятника). Проектная документация должна полностью исключать угрозу сохранности.
