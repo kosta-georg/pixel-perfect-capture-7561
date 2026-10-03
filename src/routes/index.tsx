@@ -67,8 +67,10 @@ const laws: { t: string; a?: string; p: (string | string[])[] }[] = [
 ];
 
 const stages = [
-  { icon: BookOpen, t: "Кабинетный этап (предварительный анализ)", d: "Глубокая аналитическая работа с применением современных и архивных данных. Проводится анализ космоснимков, актуальных и исторических топографических карт, государственных списков памятников, сводов историко-культурного наследия, научных отчетов и других архивных материалов." },
-  { icon: Pickaxe, t: "Полевые исследования (археологическая разведка)", d: "Выезд специалистов на объект и детальное обследование территории. Включает визуальный осмотр всего участка, сбор подъемного материала (артефактов) и детальную фотофиксацию." },
+  { icon: BookOpen, t: "Подготовительный этап", d: "Предварительная работа с архивными материалами, сводом памятников и государственным реестром, анализ карт местности, дешифровка снимков из космоса, ведомости координат участка и подготовка материально-технической базы." },
+  { icon: Pickaxe, t: "Выезд на участок / полевые работы", d: "Визуальный осмотр земельного участка и прилегающей местности в пределах территории экспертизы, согласно предоставленной Заказчиком информации (карты-схемы участка, ведомости координат, полосы отвода и пр.), фотофиксация, документация, описание всех обнаруженных объектов ИКН, сбор подъемного материала, и описание находок (если таковые имеются)." },
+  { icon: FileCheck2, t: "Заключительный этап", d: "Камеральная обработка полученных данных; составление научного отчета, включающего в себя описание зафиксированных объектов ИКН, координаты и чертежи расположения, фотоматериалы; составление Заключения археологической экспертизы; составление рекомендаций по охранным мероприятиям в отношении зафиксированных объектов ИКН." },
+  { icon: Send, t: "Финал", d: "Получение согласования Заключения в местном исполнительном органе." },
 ];
 
 const scenarios = [
@@ -168,18 +170,17 @@ function Index() {
 
       <section id="services" className="mx-auto max-w-7xl px-6 py-24">
         <SectionHead k="03" t="Методика и этапы проведения экспертизы" />
-        <p className="mb-10 max-w-3xl text-muted-foreground">
-          Чтобы исключить любые риски остановки проекта, штрафов и задержек, мы выстроили четкий поэтапный алгоритм реализации экспертизы под ключ:
-        </p>
-        <div className="grid gap-px overflow-hidden rounded-sm border bg-border md:grid-cols-2">
+        <div className="mx-auto max-w-3xl divide-y divide-charcoal-foreground/10 rounded-sm border border-charcoal-foreground/10">
           {stages.map(({ icon: I, t, d }, i) => (
-            <div key={t} className="bg-background p-8">
-              <div className="flex items-center gap-4">
-                <span className="font-mono text-sm text-gold">Этап {i + 1}</span>
-                <I className="h-6 w-6 text-gold" strokeWidth={1.5} />
+            <div key={t} className="flex gap-6 bg-background p-8">
+              <div className="flex w-10 shrink-0 flex-col items-center">
+                <span className="font-mono text-sm text-gold">0{i + 1}</span>
+                <I className="mt-2 h-6 w-6 text-gold" strokeWidth={1.5} />
               </div>
-              <h3 className="mt-5 text-lg font-semibold">{t}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{d}</p>
+              <div>
+                <h3 className="text-lg font-semibold">{t}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground"><span className="font-semibold text-foreground">Задачи:</span> {d}</p>
+              </div>
             </div>
           ))}
         </div>
