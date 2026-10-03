@@ -57,7 +57,7 @@ const laws = [
 ];
 
 const btnGold = "inline-flex items-center justify-center rounded-sm bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90";
-const btnGhost = "inline-flex items-center justify-center rounded-sm border border-navy-foreground/40 px-6 py-3 text-sm font-semibold text-navy-foreground transition hover:bg-navy-foreground/10";
+const btnGhost = "inline-flex items-center justify-center rounded-sm border border-charcoal-foreground/40 px-6 py-3 text-sm font-semibold text-charcoal-foreground transition hover:bg-charcoal-foreground/10";
 
 function Index() {
   return (
