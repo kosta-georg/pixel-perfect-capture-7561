@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Pickaxe, MapPinned, BookOpen, FileCheck2, Phone, Mail, Send, MapPin } from "lucide-react";
+import { Pickaxe, BookOpen, FileCheck2, Phone, Mail, Send, MapPin } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 
 export const Route = createFileRoute("/")({
