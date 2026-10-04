@@ -32,7 +32,7 @@ function Logo({ className = "h-9 w-9" }: { className?: string }) {
 const nav = [
   ["О нас", "#about"],
   ["Законы", "#laws"],
-  ["Этапы", "#services"],
+  ["Экспертиза", "#services"],
   ["Контакты", "#contacts"],
 ];
 
@@ -74,7 +74,7 @@ const stages = [
 ];
 
 
-const btnGold = "inline-flex items-center justify-center rounded-sm bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90";
+const btnDark = "inline-flex items-center justify-center rounded-sm bg-charcoal px-6 py-3 text-sm font-semibold text-charcoal-foreground border border-charcoal-foreground/50 transition hover:border-gold hover:text-gold";
 const btnGhost = "inline-flex items-center justify-center rounded-sm border border-charcoal-foreground/40 px-6 py-3 text-sm font-semibold text-charcoal-foreground transition hover:bg-charcoal-foreground/10";
 
 function Index() {
@@ -94,7 +94,7 @@ function Index() {
               <a key={h} href={h} className="text-charcoal-foreground/80 transition hover:text-gold">{l}</a>
             ))}
           </nav>
-          <a href="#contacts" className={btnGold}>Оставить заявку</a>
+          <a href="#contacts" className={btnDark}>Оставить заявку</a>
         </div>
       </header>
 
@@ -107,14 +107,13 @@ function Index() {
             Историко-культурная экспертиза и археологические изыскания в Казахстане
           </h1>
           <p className="mt-8 max-w-3xl text-lg text-charcoal-foreground/80">
-            Проведение профессиональной историко-культурной экспертизы и археологических изысканий на всей территории Казахстана. Мы обеспечиваем полное научное сопровождение объектов строительства и недропользования, применяя современные методы документации и оборудование, соответствующее государственным и мировым стандартам.
+            Проведение профессиональной историко-культурной экспертизы и комплексных археологических изысканий на всей территории Казахстана. Археологический надзор и полное научное сопровождение объектов строительства и недропользования, в строгом соответствии утверждённым методикам, законодательным актам и общепринятым мировым стандартам. Все работы осуществляются аккредитованными специалистами с привлечением лицензированных организаций.
           </p>
           <blockquote className="mt-8 max-w-2xl border-l-2 border-gold pl-5 text-lg italic text-gold">
-            «Раскрываем тайны прошлого — сохраняем культурное наследие для будущего».
+            «Сохраняем наследие великого прошлого, помогая созидать не менее великое будущее»
           </blockquote>
           <div className="mt-10 flex flex-wrap gap-4">
-            <a href="#contacts" className={btnGold}>Заказать экспертизу</a>
-            <a href="#contacts" className={btnGhost}>Рассчитать стоимость</a>
+            <a href="#contacts" className={btnDark}>Заказать экспертизу</a>
           </div>
         </div>
       </section>
