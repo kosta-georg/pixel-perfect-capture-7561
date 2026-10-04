@@ -74,7 +74,7 @@ const stages = [
 ];
 
 
-const btnGold = "inline-flex items-center justify-center rounded-sm bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90";
+const btnDark = "inline-flex items-center justify-center rounded-sm bg-charcoal px-6 py-3 text-sm font-semibold text-charcoal-foreground border border-charcoal-foreground/50 transition hover:border-gold hover:text-gold";
 const btnGhost = "inline-flex items-center justify-center rounded-sm border border-charcoal-foreground/40 px-6 py-3 text-sm font-semibold text-charcoal-foreground transition hover:bg-charcoal-foreground/10";
 
 function Index() {
@@ -94,7 +94,7 @@ function Index() {
               <a key={h} href={h} className="text-charcoal-foreground/80 transition hover:text-gold">{l}</a>
             ))}
           </nav>
-          <a href="#contacts" className={btnGold}>Оставить заявку</a>
+          <a href="#contacts" className={btnDark}>Оставить заявку</a>
         </div>
       </header>
 
