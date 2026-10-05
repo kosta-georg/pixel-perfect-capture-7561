@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { CircleCheck as CheckCircle2, CircleAlert as AlertCircle, Loader as Loader2 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 type Status = "idle" | "submitting" | "success" | "error";

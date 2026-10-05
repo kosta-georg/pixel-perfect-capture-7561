@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Pickaxe, BookOpen, FileCheck2, Phone, Mail, Send, MapPin } from "lucide-react";
+import { Pickaxe, BookOpen, FileCheck as FileCheck2, Phone, Mail, Send, MapPin } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import { FeedbackForm } from "@/components/feedback-form";
 
