@@ -1,6 +1,5 @@
 import { useState, type FormEvent } from "react";
 import { CircleCheck as CheckCircle2, CircleAlert as AlertCircle, Loader as Loader2 } from "lucide-react";
-import { supabase } from "@/lib/supabase";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -26,20 +25,22 @@ export function FeedbackForm() {
       return;
     }
 
-    if (!supabase) {
-      setStatus("error");
-      setErrorMsg("Отправка заявок временно недоступна. Пожалуйста, свяжитесь с нами по телефону.");
-      return;
-    }
-
-    const { error } = await supabase.from("feedback_submissions").insert({
-      name,
-      phone,
-      email,
-      message,
-    });
-
-    if (error) {
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/info@archexpertise.kz", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: "Новая заявка с сайта ИКЭ",
+          _template: "table",
+          _captcha: "false",
+          "Имя": name,
+          "Телефон": phone,
+          "Email": email ?? "—",
+          "Сообщение": message,
+        }),
+      });
+      if (!res.ok) throw new Error();
+    } catch {
       setStatus("error");
       setErrorMsg("Не удалось отправить заявку. Попробуйте позже или свяжитесь по телефону.");
       return;

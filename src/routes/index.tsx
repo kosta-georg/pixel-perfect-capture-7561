@@ -1,5 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Pickaxe, BookOpen, FileCheck as FileCheck2, Phone, Mail, Send, MapPin } from "lucide-react";
+import { Pickaxe, BookOpen, FileCheck as FileCheck2, Phone, Mail, MessageCircle, Send } from "lucide-react";
+
+const contactLinks = [
+  { I: Phone, name: "Телефон", label: "+7 (777) 843-79-30", href: "tel:+77778437930" },
+  { I: MessageCircle, name: "WhatsApp", label: "+7 (777) 843-79-30", href: "https://wa.me/77778437930" },
+  { I: Mail, name: "Почта", label: "info@archexpertise.kz", href: "mailto:info@archexpertise.kz" },
+];
 import hero from "@/assets/hero.jpg";
 import { FeedbackForm } from "@/components/feedback-form";
 
@@ -208,18 +214,12 @@ function Index() {
                 Заполните форму, и наши специалисты свяжутся с вами для уточнения деталей и расчёта стоимости работ.
               </p>
               <div className="mt-8 space-y-4">
-                <p className="flex items-center gap-3 text-sm text-charcoal-foreground/80">
-                  <Phone className="h-5 w-5 text-gold" strokeWidth={1.5} />
-                  +7 (700) 000-00-00
-                </p>
-                <p className="flex items-center gap-3 text-sm text-charcoal-foreground/80">
-                  <Mail className="h-5 w-5 text-gold" strokeWidth={1.5} />
-                  info@ike.kz
-                </p>
-                <p className="flex items-center gap-3 text-sm text-charcoal-foreground/80">
-                  <MapPin className="h-5 w-5 text-gold" strokeWidth={1.5} />
-                  г. Астана, ул. ________, офис __
-                </p>
+                {contactLinks.map(({ I, label, href }) => (
+                  <a key={href} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-charcoal-foreground/80 transition hover:text-gold">
+                    <I className="h-5 w-5 text-gold" strokeWidth={1.5} />
+                    {label}
+                  </a>
+                ))}
               </div>
             </div>
             <div className="rounded-sm border border-charcoal-foreground/10 bg-charcoal/50 p-8">
@@ -234,17 +234,18 @@ function Index() {
           <div>
             <div className="flex items-center gap-3 text-charcoal-foreground"><Logo className="h-8 w-8" /><span className="font-bold">ИКЭ</span></div>
             <p className="mt-4 text-sm">Историко-Культурная Экспертиза</p>
-            <p className="mt-2 text-sm">Лицензия № ______ от __.__.____</p>
           </div>
           <div className="space-y-3 text-sm">
-            <p className="flex gap-2"><MapPin className="h-4 w-4 text-gold" /> г. Астана, ул. ________, офис __</p>
-            <p className="flex gap-2"><Phone className="h-4 w-4 text-gold" /> +7 (700) 000-00-00</p>
-            <p className="flex gap-2"><Mail className="h-4 w-4 text-gold" /> info@ike.kz</p>
+            {contactLinks.map(({ I, label, href }) => (
+              <a key={href} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="flex items-center gap-2 transition hover:text-gold">
+                <I className="h-4 w-4 text-gold" /> {label}
+              </a>
+            ))}
           </div>
           <div className="text-sm md:text-right">
             <div className="flex gap-3 md:justify-end">
-              {[Send, Phone, Mail].map((I, i) => (
-                <a key={i} href="#" aria-label="Контакт" className="rounded-sm border border-charcoal-foreground/20 p-2 transition hover:border-gold hover:text-gold"><I className="h-4 w-4" /></a>
+              {contactLinks.map(({ I, href, name }) => (
+                <a key={href} href={href} aria-label={name} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="rounded-sm border border-charcoal-foreground/20 p-2 transition hover:border-gold hover:text-gold"><I className="h-4 w-4" /></a>
               ))}
             </div>
             <a href="#" className="mt-4 block hover:text-gold">Политика конфиденциальности</a>
