@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Pickaxe, BookOpen, FileCheck as FileCheck2, Phone, Mail, MessageCircle } from "lucide-react";
+import { Pickaxe, BookOpen, FileCheck as FileCheck2, Phone, Mail, MessageCircle, Send } from "lucide-react";
 
 const contactLinks = [
   { I: Phone, name: "Телефон", label: "+7 (777) 843-79-30", href: "tel:+77778437930" },
