@@ -179,8 +179,8 @@ function Index() {
 
       <section id="services" className="mx-auto max-w-7xl px-6 py-24">
         <div className="mb-14">
-          <p className="text-lg text-charcoal-foreground/70">Историко-культурная экспертиза / Археологическая экспертиза</p>
-          <h2 className="mt-2 text-3xl font-bold md:text-4xl">Методика и этапы проведения</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">Историко-культурная экспертиза / Археологическая экспертиза</h2>
+          <p className="mt-2 text-lg text-charcoal-foreground/70">Методика и этапы проведения</p>
         </div>
         <div className="mx-auto max-w-3xl divide-y divide-charcoal-foreground/10 rounded-sm border border-charcoal-foreground/10">
           {stages.map(({ icon: I, t, d }, i) => (
