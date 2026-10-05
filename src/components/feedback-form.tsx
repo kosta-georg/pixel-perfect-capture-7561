@@ -52,7 +52,7 @@ export function FeedbackForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center rounded-sm border border-gold/40 bg-charcoal p-6 text-center">
+      <div className="flex flex-col items-center justify-center rounded-sm border border-gold/40 bg-charcoal p-8 text-center">
         <CheckCircle2 className="h-12 w-12 text-gold" strokeWidth={1.5} />
         <p className="mt-4 text-lg font-semibold text-charcoal-foreground">
           Заявка отправлена
@@ -71,7 +71,7 @@ export function FeedbackForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div>
         <label htmlFor="fb-name" className="mb-2 block text-sm font-medium text-charcoal-foreground/80">
           Имя <span className="text-gold">*</span>
@@ -82,12 +82,12 @@ export function FeedbackForm() {
           type="text"
           required
           disabled={status === "submitting"}
-          className="w-full rounded-sm border border-charcoal-foreground/20 bg-charcoal/50 px-4 py-2.5 text-sm text-charcoal-foreground placeholder:text-charcoal-foreground/40 transition focus:border-gold focus:outline-none disabled:opacity-50"
+          className="w-full rounded-sm border border-charcoal-foreground/20 bg-charcoal/50 px-4 py-3 text-sm text-charcoal-foreground placeholder:text-charcoal-foreground/40 transition focus:border-gold focus:outline-none disabled:opacity-50"
           placeholder="Ваше имя"
         />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="fb-phone" className="mb-2 block text-sm font-medium text-charcoal-foreground/80">
             Телефон <span className="text-gold">*</span>
@@ -98,7 +98,7 @@ export function FeedbackForm() {
             type="tel"
             required
             disabled={status === "submitting"}
-            className="w-full rounded-sm border border-charcoal-foreground/20 bg-charcoal/50 px-4 py-2.5 text-sm text-charcoal-foreground placeholder:text-charcoal-foreground/40 transition focus:border-gold focus:outline-none disabled:opacity-50"
+            className="w-full rounded-sm border border-charcoal-foreground/20 bg-charcoal/50 px-4 py-3 text-sm text-charcoal-foreground placeholder:text-charcoal-foreground/40 transition focus:border-gold focus:outline-none disabled:opacity-50"
             placeholder="+7 (700) 000-00-00"
           />
         </div>
@@ -111,7 +111,7 @@ export function FeedbackForm() {
             name="email"
             type="email"
             disabled={status === "submitting"}
-            className="w-full rounded-sm border border-charcoal-foreground/20 bg-charcoal/50 px-4 py-2.5 text-sm text-charcoal-foreground placeholder:text-charcoal-foreground/40 transition focus:border-gold focus:outline-none disabled:opacity-50"
+            className="w-full rounded-sm border border-charcoal-foreground/20 bg-charcoal/50 px-4 py-3 text-sm text-charcoal-foreground placeholder:text-charcoal-foreground/40 transition focus:border-gold focus:outline-none disabled:opacity-50"
             placeholder="you@example.com"
           />
         </div>
@@ -125,9 +125,9 @@ export function FeedbackForm() {
           id="fb-message"
           name="message"
           required
-          rows={3}
+          rows={4}
           disabled={status === "submitting"}
-          className="w-full rounded-sm border border-charcoal-foreground/20 bg-charcoal/50 px-4 py-2.5 text-sm text-charcoal-foreground placeholder:text-charcoal-foreground/40 transition focus:border-gold focus:outline-none disabled:opacity-50"
+          className="w-full rounded-sm border border-charcoal-foreground/20 bg-charcoal/50 px-4 py-3 text-sm text-charcoal-foreground placeholder:text-charcoal-foreground/40 transition focus:border-gold focus:outline-none disabled:opacity-50"
           placeholder="Опишите объект и территорию, нуждающуюся в экспертизе"
         />
       </div>
@@ -142,7 +142,7 @@ export function FeedbackForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="inline-flex w-full items-center justify-center rounded-sm bg-gold px-6 py-2.5 text-sm font-semibold text-charcoal transition hover:bg-gold/90 disabled:cursor-not-allowed disabled:opacity-50"
+        className="inline-flex w-full items-center justify-center rounded-sm bg-gold px-6 py-3 text-sm font-semibold text-charcoal transition hover:bg-gold/90 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {status === "submitting" ? (
           <>
