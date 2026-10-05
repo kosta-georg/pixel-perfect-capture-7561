@@ -116,56 +116,56 @@ function Index() {
       <section className="relative overflow-hidden bg-charcoal text-charcoal-foreground">
         <img src={hero} alt="Историческое городище в степи Казахстана" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover opacity-45" />
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-charcoal/20" />
-        <div className="relative mx-auto max-w-7xl px-6 py-28 md:py-36">
-          <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Республика Казахстан</p>
+        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-24">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Республика Казахстан</p>
           <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
             Историко-культурная экспертиза и археологические изыскания в Казахстане
           </h1>
-          <p className="mt-8 max-w-3xl text-lg text-charcoal-foreground/80">
+          <p className="mt-5 max-w-3xl text-base text-charcoal-foreground/80 md:text-lg">
             Проведение профессиональной историко-культурной экспертизы и комплексных археологических изысканий на всей территории Казахстана. Археологический надзор и полное научное сопровождение объектов строительства и недропользования. Все работы осуществляются аккредитованными специалистами лицензированных организаций, в строгом соответствии с утверждёнными методиками, законодательными актами и общепринятыми мировыми стандартами.
           </p>
-          <blockquote className="mt-8 max-w-2xl border-l-2 border-gold pl-5 text-lg italic text-gold">
+          <blockquote className="mt-6 max-w-2xl border-l-2 border-gold pl-5 text-base italic text-gold md:text-lg">
             «Сохраняем наследие великого прошлого, помогая созидать не менее великое будущее»
           </blockquote>
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap gap-4">
             <a href="#contacts" className={btnDark}>Заказать экспертизу</a>
           </div>
         </div>
       </section>
 
-      <section id="about" className="mx-auto max-w-7xl px-6 py-24">
-        <h2 className="mb-14 text-3xl font-bold md:text-4xl">Эксперты и компетенции</h2>
-        <div className="grid gap-12 lg:grid-cols-3">
+      <section id="about" className="mx-auto max-w-7xl px-6 py-12 md:py-20">
+        <h2 className="mb-8 text-2xl font-bold md:text-4xl">Эксперты и компетенции</h2>
+        <div className="grid gap-8 lg:grid-cols-3">
           <p className="text-lg leading-relaxed text-muted-foreground lg:col-span-2">
             Мы специализируемся на проведении комплексных историко-культурных и археологических экспертиз любой сложности для всех видов строительства и недропользования по всему Казахстану. Наши эксперты имеют двадцатилетний опыт работ в археологии и реставрации, в полевых исследованиях и охранных мероприятиях. Принимали непосредственное участие в разработке методик проведения профильных экспертиз и внедрении современных стандартов фиксации, документации и реставрации памятников археологии и архитектуры. За их плечами более тысячи реализованных проектов различного масштаба и столько же выданных и согласованных заключений историко-культурной (археологической) экспертизы. Также мы сотрудничаем с ведущими специалистами в области истории, археологии, архитектуры и реставрации по всей стране, часть из которых имеют прямое отношение к составлению археологических карт, государственных списков и сводов памятников истории и культуры для своих регионов. Налажены прямые рабочие контакты с местными исполнительными органами, отвечающими за охрану историко-культурного наследия в каждой области.
           </p>
           <div className="grid gap-px self-start overflow-hidden rounded-sm border bg-border">
             {[["20 лет", "в археологии и экспертизе"], ["1000+", "реализованных проектов"], ["100%", "соблюдение законов РК"]].map(([n, l]) => (
-              <div key={n} className="bg-background p-8">
-                <div className="text-4xl font-bold text-gold">{n}</div>
-                <div className="mt-2 text-sm text-muted-foreground">{l}</div>
+              <div key={n} className="bg-background p-5 md:p-6">
+                <div className="text-3xl font-bold text-gold md:text-4xl">{n}</div>
+                <div className="mt-1 text-sm text-muted-foreground">{l}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="laws" className="bg-card py-24">
+      <section id="laws" className="bg-card py-12 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="mb-14 text-3xl font-bold md:text-4xl">Законодательство и правила</h2>
-          <p className="mb-10 max-w-3xl text-lg text-gray-300">
+          <h2 className="mb-8 text-2xl font-bold md:text-4xl">Законодательство и правила</h2>
+          <p className="mb-6 max-w-3xl text-base text-gray-300 md:text-lg">
             <span className="font-semibold">Историко-культурная и археологическая экспертиза</span> — обязательный этап согласования проектной документации при освоении земельных участков. В нормативных правовых актах используется официальный термин «историко-культурная экспертиза». Но в среде проектировщиков, исследователей и изыскателей данный вид работ называют «археологическая экспертиза».
           </p>
-          <p className="mb-14 max-w-3xl text-lg text-gray-300">
+          <p className="mb-8 max-w-3xl text-base text-gray-300 md:text-lg">
             Ниже приведены ключевые законы и правила, регулирующие проведение этих работ в Республике Казахстан:
           </p>
           <div className="divide-y border-y">
             {laws.map(({ t, a, p }) => (
-              <article key={t} className="py-10">
+              <article key={t} className="py-6 md:py-8">
                 <div>
                   <h3 className="text-xl font-semibold">{t}</h3>
                   {a && <p className="mt-2 text-sm font-semibold uppercase tracking-wider text-gold">{a}</p>}
-                  <div className="mt-4 max-w-3xl space-y-3 leading-relaxed text-muted-foreground">
+                  <div className="mt-3 max-w-3xl space-y-2 leading-relaxed text-muted-foreground">
                     {p.map((x, j) =>
                       Array.isArray(x) ? (
                         <ul key={j} className="space-y-2 border-l-2 border-gold/60 pl-5">
@@ -183,33 +183,33 @@ function Index() {
         </div>
       </section>
 
-      <section id="services" className="mx-auto max-w-7xl px-6 py-24">
-        <div className="mb-14">
+      <section id="services" className="mx-auto max-w-7xl px-6 py-12 md:py-20">
+        <div className="mb-8">
           <h2 className="text-3xl font-bold md:text-4xl">Историко-культурная экспертиза / Археологическая экспертиза</h2>
           <p className="mt-2 text-lg text-charcoal-foreground/70">Методика и этапы проведения</p>
         </div>
         <div className="mx-auto max-w-3xl divide-y divide-charcoal-foreground/10 rounded-sm border border-charcoal-foreground/10">
           {stages.map(({ icon: I, t, d }, i) => (
-            <div key={t} className="flex gap-6 bg-background p-8">
+            <div key={t} className="flex gap-5 bg-background p-5 md:p-7">
               <div className="flex w-10 shrink-0 flex-col items-center">
                 <span className="font-mono text-sm text-gold">0{i + 1}</span>
                 <I className="mt-2 h-6 w-6 text-gold" strokeWidth={1.5} />
               </div>
               <div>
                 <h3 className="text-lg font-semibold">{t}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{d}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d}</p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      <section id="contacts" className="bg-charcoal py-24">
+      <section id="contacts" className="bg-charcoal py-12 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-12 lg:grid-cols-2">
+          <div className="grid gap-8 lg:grid-cols-2">
             <div>
               <h2 className="text-3xl font-bold text-charcoal-foreground md:text-4xl">Контакты</h2>
-              <div className="mt-8 flex flex-col gap-6">
+              <div className="mt-6 flex flex-col gap-4">
                 {contactLinks.map(({ I, label, href }) => (
                   <a
                     key={href}
@@ -226,7 +226,7 @@ function Index() {
             </div>
             <div>
               <h2 className="text-3xl font-bold text-charcoal-foreground md:text-4xl">Оставить заявку</h2>
-              <div className="mt-8 rounded-sm border border-charcoal-foreground/10 bg-charcoal/50 p-8">
+              <div className="mt-6 rounded-sm border border-charcoal-foreground/10 bg-charcoal/50 p-5 md:p-7">
                 <FeedbackForm />
               </div>
             </div>
@@ -235,7 +235,7 @@ function Index() {
       </section>
 
       <footer className="border-t border-charcoal-foreground/10 bg-charcoal text-charcoal-foreground/75">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 md:py-12 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-3 text-charcoal-foreground"><Logo className="h-8 w-8" /><span className="font-bold">ИКЭ</span></div>
             <p className="mt-4 text-sm">Историко-Культурная Экспертиза</p>
