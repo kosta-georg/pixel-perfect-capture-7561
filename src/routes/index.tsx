@@ -208,22 +208,27 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Свяжитесь с нами</p>
-              <h2 className="text-3xl font-bold text-charcoal-foreground md:text-4xl">Оставить заявку</h2>
-              <p className="mt-6 max-w-md text-charcoal-foreground/70">
-                Заполните форму, и наши специалисты свяжутся с вами для уточнения деталей и расчёта стоимости работ.
-              </p>
-              <div className="mt-8 space-y-4">
+              <h2 className="text-3xl font-bold text-charcoal-foreground md:text-4xl">Контакты</h2>
+              <div className="mt-8 flex flex-col gap-6">
                 {contactLinks.map(({ I, label, href }) => (
-                  <a key={href} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-charcoal-foreground/80 transition hover:text-gold">
-                    <I className="h-5 w-5 text-gold" strokeWidth={1.5} />
-                    {label}
+                  <a
+                    key={href}
+                    href={href}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 text-lg text-charcoal-foreground/85 transition hover:text-gold"
+                  >
+                    <I className="h-6 w-6 shrink-0 text-gold" strokeWidth={1.5} />
+                    <span>{label}</span>
                   </a>
                 ))}
               </div>
             </div>
-            <div className="rounded-sm border border-charcoal-foreground/10 bg-charcoal/50 p-8">
-              <FeedbackForm />
+            <div>
+              <h2 className="text-3xl font-bold text-charcoal-foreground md:text-4xl">Оставить заявку</h2>
+              <div className="mt-8 rounded-sm border border-charcoal-foreground/10 bg-charcoal/50 p-8">
+                <FeedbackForm />
+              </div>
             </div>
           </div>
         </div>
