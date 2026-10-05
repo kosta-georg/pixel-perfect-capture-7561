@@ -30,7 +30,7 @@ function Logo({ className = "h-9 w-9" }: { className?: string }) {
 }
 
 const nav = [
-  ["О нас", "#about"],
+  ["Эксперты", "#about"],
   ["Законы", "#laws"],
   ["Экспертиза", "#services"],
   ["Контакты", "#contacts"],
@@ -146,6 +146,12 @@ function Index() {
       <section id="laws" className="bg-card py-24">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="mb-14 text-3xl font-bold md:text-4xl">Законодательство и правила</h2>
+          <p className="mb-10 max-w-3xl text-lg text-gray-300">
+            <span className="font-semibold">Историко-культурная и археологическая экспертиза</span> — обязательный этап согласования проектной документации при освоении земельных участков. В нормативных правовых актах используется официальный термин «историко-культурная экспертиза». Но в среде проектировщиков, исследователей и изыскателей данный вид работ называют «археологическая экспертиза».
+          </p>
+          <p className="mb-14 max-w-3xl text-lg text-gray-300">
+            Ниже приведены ключевые законы и правила, регулирующие проведение этих работ в Республике Казахстан:
+          </p>
           <div className="divide-y border-y">
             {laws.map(({ t, a, p }) => (
               <article key={t} className="py-10">
