@@ -26,6 +26,12 @@ export function FeedbackForm() {
       return;
     }
 
+    if (!supabase) {
+      setStatus("error");
+      setErrorMsg("Отправка заявок временно недоступна. Пожалуйста, свяжитесь с нами по телефону.");
+      return;
+    }
+
     const { error } = await supabase.from("feedback_submissions").insert({
       name,
       phone,
