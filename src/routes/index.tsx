@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Pickaxe, BookOpen, FileCheck2, Phone, Mail, Send, MapPin } from "lucide-react";
 import hero from "@/assets/hero.jpg";
+import { FeedbackForm } from "@/components/feedback-form";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -197,7 +198,38 @@ function Index() {
         </div>
       </section>
 
-      <footer id="contacts" className="border-t border-charcoal-foreground/10 bg-charcoal text-charcoal-foreground/75">
+      <section id="contacts" className="bg-charcoal py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <div>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Свяжитесь с нами</p>
+              <h2 className="text-3xl font-bold text-charcoal-foreground md:text-4xl">Оставить заявку</h2>
+              <p className="mt-6 max-w-md text-charcoal-foreground/70">
+                Заполните форму, и наши специалисты свяжутся с вами для уточнения деталей и расчёта стоимости работ.
+              </p>
+              <div className="mt-8 space-y-4">
+                <p className="flex items-center gap-3 text-sm text-charcoal-foreground/80">
+                  <Phone className="h-5 w-5 text-gold" strokeWidth={1.5} />
+                  +7 (700) 000-00-00
+                </p>
+                <p className="flex items-center gap-3 text-sm text-charcoal-foreground/80">
+                  <Mail className="h-5 w-5 text-gold" strokeWidth={1.5} />
+                  info@ike.kz
+                </p>
+                <p className="flex items-center gap-3 text-sm text-charcoal-foreground/80">
+                  <MapPin className="h-5 w-5 text-gold" strokeWidth={1.5} />
+                  г. Астана, ул. ________, офис __
+                </p>
+              </div>
+            </div>
+            <div className="rounded-sm border border-charcoal-foreground/10 bg-charcoal/50 p-8">
+              <FeedbackForm />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-charcoal-foreground/10 bg-charcoal text-charcoal-foreground/75">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-3 text-charcoal-foreground"><Logo className="h-8 w-8" /><span className="font-bold">ИКЭ</span></div>
