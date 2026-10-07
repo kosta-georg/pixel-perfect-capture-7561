@@ -12,9 +12,9 @@ import { FeedbackForm } from "@/components/feedback-form";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Историко-культурная и археологическая экспертиза в Казахстане. Полный комплекс археологических изысканий и профильных научных исследований для объектов строительства и недропользования. Официальное заключение с согласованием в государственных органах." },
-      { name: "description", content: "Историко-культурная и археологическая экспертиза в Казахстане: полевые исследования, составление научных отчётов, оформление заключений с согласованием." },
-      { property: "og:title", content: "Историко-культурная и археологическая экспертиза в Казахстане. Полный комплекс археологических изысканий и профильных научных исследований для объектов строительства и недропользования. Официальное заключение с согласованием в государственных органах." },
+      { title: "Историко-культурная и археологическая экспертиза в Казахстане" },
+      { name: "description", content: "Историко-культурная и археологическая экспертиза в Казахстане. Полный комплекс археологических изысканий и профильных научных исследований для объектов строительства и недропользования. Официальное заключение с согласованием в государственных органах." },
+      { property: "og:title", content: "Историко-культурная и археологическая экспертиза в Казахстане" },
       { property: "og:description", content: "Историко-культурная и археологическая экспертиза в Казахстане: полевые исследования, составление научных отчётов, оформление заключений с согласованием." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -116,18 +116,18 @@ function Index() {
       <section className="relative overflow-hidden bg-charcoal text-charcoal-foreground">
         <img src={hero} alt="Историческое городище в степи Казахстана" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover opacity-45" />
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-charcoal/20" />
-        <div className="relative mx-auto max-w-7xl px-6 py-28 md:py-36">
-          <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Республика Казахстан</p>
-          <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
+        <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-14">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-gold">Республика Казахстан</p>
+          <h1 className="max-w-4xl text-3xl font-bold leading-tight md:text-5xl">
             Историко-культурная и археологическая экспертиза в Казахстане
           </h1>
-          <p className="mt-8 max-w-3xl text-lg text-charcoal-foreground/80">
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-charcoal-foreground/80 md:text-lg">
             Проведение профессиональной историко-культурной и археологической экспертизы, а также комплексных археологических изысканий и профильных научных исследований на объектах строительства и недропользования по всей территории Казахстана. Археологический надзор и полное экспертно-методическое сопровождение проектов любой сложности. Составление научных отчётов и оформление официальных экспертных заключений с согласованием в государственных органах. Все работы осуществляются аккредитованными специалистами лицензированных организаций, в строгом соответствии с утверждёнными методиками, законодательными актами и общепринятыми мировыми стандартами.
           </p>
-          <blockquote className="mt-8 max-w-2xl border-l-2 border-gold pl-5 text-lg italic text-gold">
+          <blockquote className="mt-5 max-w-2xl border border-gold/50 px-5 py-3 text-base italic text-gold md:text-lg">
             «Сохраняем наследие великого прошлого, помогая созидать не менее великое будущее»
           </blockquote>
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-6 flex flex-wrap gap-4">
             <a href="#contacts" className={btnDark}>Заказать экспертизу</a>
           </div>
         </div>
