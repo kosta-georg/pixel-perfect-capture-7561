@@ -199,7 +199,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="laws" className="bg-card py-24">
+      <section id="laws" className="bg-charcoal py-24">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="mb-14 text-3xl font-bold md:text-4xl">Законодательство и правила</h2>
           <p className="mb-10 max-w-3xl text-lg text-gray-300">
