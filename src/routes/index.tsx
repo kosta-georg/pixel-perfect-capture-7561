@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Pickaxe, BookOpen, FileCheck as FileCheck2, Phone, Mail, MessageCircle, Send } from "lucide-react";
+import { Pickaxe, BookOpen, FileCheck as FileCheck2, Phone, Mail, MessageCircle, Send, ChevronDown } from "lucide-react";
 
 const contactLinks = [
   { I: Phone, name: "Телефон", label: "+7 (777) 843-79-30", href: "tel:+77778437930" },
@@ -81,6 +82,54 @@ const laws: { t: string; a?: string; p: (string | string[])[] }[] = [
   },
 ];
 
+function LawItem({ law, index }: { law: { t: string; a?: string; p: (string | string[])[] }; index: number }) {
+  const [open, setOpen] = useState(false);
+  const bodyId = `law-body-${index}`;
+  return (
+    <article className="border-b border-neutral-800/60">
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-controls={bodyId}
+        onClick={() => setOpen((v) => !v)}
+        className="w-full cursor-pointer px-2 py-6 text-left transition-colors duration-200 hover:bg-neutral-800/50"
+      >
+        <h3 className="text-xl font-bold text-white">{law.t}</h3>
+        <div className="mt-3 flex items-center justify-between gap-4">
+          {law.a ? (
+            <p className="text-sm font-semibold uppercase tracking-wider text-amber-500">{law.a}</p>
+          ) : (
+            <span />
+          )}
+          <ChevronDown
+            size={20}
+            aria-hidden="true"
+            className={`shrink-0 text-amber-500 transition-transform duration-300 ease-in-out ${open ? "rotate-180" : ""}`}
+          />
+        </div>
+      </button>
+      <div
+        id={bodyId}
+        className={`grid transition-all duration-300 ease-in-out ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+      >
+        <div className="min-h-0 overflow-hidden">
+          <div className="max-w-3xl space-y-3 px-2 pb-8 leading-relaxed text-muted-foreground">
+            {law.p.map((x, j) =>
+              Array.isArray(x) ? (
+                <ul key={j} className="space-y-2 border-l-2 border-gold/60 pl-5">
+                  {x.map((li) => <li key={li}>— {li}</li>)}
+                </ul>
+              ) : (
+                <p key={j}>{x}</p>
+              ),
+            )}
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 const stages = [
   { icon: BookOpen, t: "Подготовительный этап", d: "Обработка данных о территории экспертизы, полученных от заказчика; анализ государственных списков и сводов памятников истории и культуры и других архивных материалов, имеющих отношение к территории экспертизы; работа с топографическими картами и снимками из космоса." },
   { icon: Pickaxe, t: "Полевой этап", d: "Визуальный осмотр и фотофиксация территории экспертизы; опрос местных жителей; фиксация на фотокамеру и GPS, измерение и описание выявленных объектов историко-культурного наследия, сбор подъёмного материала; в случае необходимости, на памятниках поселенческого типа для определения наличия культурного слоя, глубины его залегания и территории распространения закладываются разведывательные стратиграфические шурфы." },
@@ -150,7 +199,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="laws" className="bg-card py-24">
+      <section id="laws" className="bg-charcoal py-24">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="mb-14 text-3xl font-bold md:text-4xl">Законодательство и правила</h2>
           <p className="mb-10 max-w-3xl text-lg text-gray-300">
@@ -159,25 +208,9 @@ function Index() {
           <p className="mb-14 max-w-3xl text-lg text-gray-300">
             Ниже приведены ключевые законы и правила, регулирующие проведение этих работ в Республике Казахстан:
           </p>
-          <div className="divide-y border-y">
-            {laws.map(({ t, a, p }) => (
-              <article key={t} className="py-10">
-                <div>
-                  <h3 className="text-xl font-semibold">{t}</h3>
-                  {a && <p className="mt-2 text-sm font-semibold uppercase tracking-wider text-gold">{a}</p>}
-                  <div className="mt-4 max-w-3xl space-y-3 leading-relaxed text-muted-foreground">
-                    {p.map((x, j) =>
-                      Array.isArray(x) ? (
-                        <ul key={j} className="space-y-2 border-l-2 border-gold/60 pl-5">
-                          {x.map((li) => <li key={li}>— {li}</li>)}
-                        </ul>
-                      ) : (
-                        <p key={j}>{x}</p>
-                      ),
-                    )}
-                  </div>
-                </div>
-              </article>
+          <div className="border-t border-neutral-800/60">
+            {laws.map((law, i) => (
+              <LawItem key={law.t} law={law} index={i} />
             ))}
           </div>
         </div>
