@@ -92,7 +92,7 @@ function LawItem({ law, index }: { law: { t: string; a?: string; p: (string | st
         aria-expanded={open}
         aria-controls={bodyId}
         onClick={() => setOpen((v) => !v)}
-        className="w-full cursor-pointer px-2 py-6 text-left transition-colors duration-200 hover:bg-neutral-900/50"
+        className="w-full cursor-pointer px-2 py-6 text-left transition-colors duration-200 hover:bg-neutral-800/50"
       >
         <h3 className="text-xl font-bold text-white">{law.t}</h3>
         <div className="mt-3 flex items-center justify-between gap-4">
