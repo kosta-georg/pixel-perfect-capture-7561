@@ -8,6 +8,8 @@ const contactLinks = [
   { I: Mail, name: "Почта", label: "info@archexpertise.kz", href: "mailto:info@archexpertise.kz" },
 ];
 import hero from "@/assets/hero.jpg";
+import logoAsset from "@/assets/logo-dark-c5a059.png.asset.json";
+import { Button } from "@/components/ui/button";
 import { FeedbackForm } from "@/components/feedback-form";
 
 export const Route = createFileRoute("/")({
@@ -25,16 +27,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Logo({ className = "h-9 w-9" }: { className?: string }) {
-  const rays = Array.from({ length: 12 }, (_, i) => i * 30);
-  return (
-    <svg viewBox="0 0 48 48" className={`${className} text-gold`} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-      {rays.map((a) => (
-        <line key={a} x1="24" y1="3" x2="24" y2="8" transform={`rotate(${a} 24 24)`} />
-      ))}
-      <circle cx="24" cy="24" r="12" />
-      <path d="M24 24c0-2 2-3 3.5-2s1.5 4-1 5.5-6 0-6.5-3.5 2-7 6-7.5 8 3 8 7" />
-    </svg>
-  );
+  return <img src={logoAsset.url} alt="Логотип ИКЭ" width={1024} height={1024} className={`${className} shrink-0 object-contain`} decoding="async" />;
 }
 
 const nav = [
@@ -86,7 +79,7 @@ function LawItem({ law, index }: { law: { t: string; a?: string; p: (string | st
   const [open, setOpen] = useState(false);
   const bodyId = `law-body-${index}`;
   return (
-    <article className="border-b border-neutral-800/60">
+    <article className="border-b border-gold">
       <button
         type="button"
         aria-expanded={open}
@@ -94,17 +87,17 @@ function LawItem({ law, index }: { law: { t: string; a?: string; p: (string | st
         onClick={() => setOpen((v) => !v)}
         className="w-full cursor-pointer px-2 py-6 text-left transition-colors duration-200 hover:bg-neutral-800/50"
       >
-        <h3 className="text-xl font-bold text-white">{law.t}</h3>
+        <h3 className="text-xl font-bold text-foreground">{law.t}</h3>
         <div className="mt-3 flex items-center justify-between gap-4">
           {law.a ? (
-            <p className="text-sm font-semibold uppercase tracking-wider text-amber-500">{law.a}</p>
+            <p className="text-sm font-semibold uppercase tracking-wider text-gold">{law.a}</p>
           ) : (
             <span />
           )}
           <ChevronDown
             size={20}
             aria-hidden="true"
-            className={`shrink-0 text-amber-500 transition-transform duration-300 ease-in-out ${open ? "rotate-180" : ""}`}
+            className={`shrink-0 text-gold transition-transform duration-300 ease-in-out ${open ? "rotate-180" : ""}`}
           />
         </div>
       </button>
@@ -116,7 +109,7 @@ function LawItem({ law, index }: { law: { t: string; a?: string; p: (string | st
           <div className="max-w-3xl space-y-3 px-2 pb-8 leading-relaxed text-muted-foreground">
             {law.p.map((x, j) =>
               Array.isArray(x) ? (
-                <ul key={j} className="space-y-2 border-l-2 border-gold/60 pl-5">
+                <ul key={j} className="space-y-2 border-l-2 border-gold pl-5">
                   {x.map((li) => <li key={li}>— {li}</li>)}
                 </ul>
               ) : (
@@ -138,13 +131,12 @@ const stages = [
 ];
 
 
-const btnDark = "inline-flex items-center justify-center rounded-sm bg-charcoal px-6 py-3 text-sm font-semibold text-charcoal-foreground border border-charcoal-foreground/50 transition hover:border-gold hover:text-gold";
-const btnGhost = "inline-flex items-center justify-center rounded-sm border border-charcoal-foreground/40 px-6 py-3 text-sm font-semibold text-charcoal-foreground transition hover:bg-charcoal-foreground/10";
+const btnDark = "h-auto whitespace-normal rounded-sm border border-gold bg-transparent px-6 py-3 text-sm font-semibold text-gold shadow-none hover:bg-gold hover:text-charcoal";
 
 function Index() {
   return (
     <div className="min-h-screen">
-      <header className="sticky top-0 z-50 border-b border-charcoal-foreground/10 bg-charcoal/95 text-charcoal-foreground backdrop-blur">
+      <header className="sticky top-0 z-50 border-b border-gold bg-charcoal/95 text-charcoal-foreground backdrop-blur">
         <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-6 px-6 py-3">
           <a href="#" className="flex items-center gap-3">
             <Logo />
@@ -158,7 +150,7 @@ function Index() {
               <a key={h} href={h} className="text-charcoal-foreground/80 transition hover:text-gold">{l}</a>
             ))}
           </nav>
-          <a href="#contacts" className={btnDark}>Оставить заявку</a>
+          <Button asChild className={btnDark}><a href="#contacts">Оставить заявку</a></Button>
         </div>
       </header>
 
@@ -173,11 +165,11 @@ function Index() {
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-charcoal-foreground/80 md:text-lg">
             Проведение профессиональной историко-культурной и археологической экспертизы, а также комплексных археологических изысканий и профильных научных исследований на объектах строительства и недропользования по всей территории Казахстана. Археологический надзор и полное экспертно-методическое сопровождение проектов любой сложности. Составление научных отчётов и оформление официальных экспертных заключений с согласованием в государственных органах. Все работы осуществляются аккредитованными специалистами лицензированных организаций, в строгом соответствии с утверждёнными методиками, законодательными актами и общепринятыми мировыми стандартами.
           </p>
-          <blockquote className="mt-5 max-w-2xl border border-gold/50 px-5 py-3 text-base italic text-gold md:text-lg">
+          <blockquote className="mt-5 max-w-2xl border-l-2 border-gold px-5 py-3 text-base italic text-gold md:text-lg">
             «Сохраняем наследие великого прошлого, помогая созидать не менее великое будущее»
           </blockquote>
           <div className="mt-6 flex flex-wrap gap-4">
-            <a href="#contacts" className={btnDark}>Заказать экспертизу</a>
+            <Button asChild className={btnDark}><a href="#contacts">Заказать экспертизу</a></Button>
           </div>
         </div>
       </section>
@@ -208,7 +200,7 @@ function Index() {
           <p className="mb-14 max-w-3xl text-lg text-gray-300">
             Ниже приведены ключевые законы и правила, регулирующие проведение этих работ в Республике Казахстан:
           </p>
-          <div className="border-t border-neutral-800/60">
+          <div className="border-t border-gold">
             {laws.map((law, i) => (
               <LawItem key={law.t} law={law} index={i} />
             ))}
@@ -221,7 +213,7 @@ function Index() {
           <h2 className="text-3xl font-bold md:text-4xl">Историко-культурная экспертиза / Археологическая экспертиза</h2>
           <p className="mt-2 text-lg text-charcoal-foreground/70">Методика и этапы проведения</p>
         </div>
-        <div className="mx-auto max-w-3xl divide-y divide-charcoal-foreground/10 rounded-sm border border-charcoal-foreground/10">
+        <div className="mx-auto max-w-3xl divide-y divide-gold rounded-sm border border-gold">
           {stages.map(({ icon: I, t, d }, i) => (
             <div key={t} className="flex gap-6 bg-background p-8">
               <div className="flex w-10 shrink-0 flex-col items-center">
@@ -259,7 +251,7 @@ function Index() {
             </div>
             <div>
               <h2 className="text-3xl font-bold text-charcoal-foreground md:text-4xl">Оставить заявку</h2>
-              <div className="mt-8 rounded-sm border border-charcoal-foreground/10 bg-charcoal/50 p-8">
+              <div className="mt-8 rounded-sm border border-gold bg-charcoal/50 p-8">
                 <FeedbackForm />
               </div>
             </div>
@@ -267,7 +259,7 @@ function Index() {
         </div>
       </section>
 
-      <footer className="border-t border-charcoal-foreground/10 bg-charcoal text-charcoal-foreground/75">
+      <footer className="border-t border-gold bg-charcoal text-charcoal-foreground/75">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-3 text-charcoal-foreground"><Logo className="h-8 w-8" /><span className="font-bold">ИКЭ</span></div>
@@ -283,7 +275,7 @@ function Index() {
           <div className="text-sm md:text-right">
             <div className="flex gap-3 md:justify-end">
               {contactLinks.map(({ I, href, name }) => (
-                <a key={href} href={href} aria-label={name} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="rounded-sm border border-charcoal-foreground/20 p-2 transition hover:border-gold hover:text-gold"><I className="h-4 w-4" /></a>
+                <a key={href} href={href} aria-label={name} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="rounded-sm border border-gold p-2 transition hover:border-gold hover:text-gold"><I className="h-4 w-4 text-gold" /></a>
               ))}
             </div>
             <a href="#" className="mt-4 block hover:text-gold">Политика конфиденциальности</a>
