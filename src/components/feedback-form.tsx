@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { useState, type FormEvent } from "react";
 import { CircleCheck as CheckCircle2, CircleAlert as AlertCircle, Loader as Loader2 } from "lucide-react";
 
@@ -52,7 +53,7 @@ export function FeedbackForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center rounded-sm border border-gold/40 bg-charcoal p-8 text-center">
+      <div className="flex flex-col items-center justify-center rounded-sm border border-gold bg-charcoal p-8 text-center">
         <CheckCircle2 className="h-12 w-12 text-gold" strokeWidth={1.5} />
         <p className="mt-4 text-lg font-semibold text-charcoal-foreground">
           Заявка отправлена
@@ -60,12 +61,12 @@ export function FeedbackForm() {
         <p className="mt-2 text-sm text-charcoal-foreground/70">
           Мы свяжемся с вами в ближайшее время.
         </p>
-        <button
+        <Button
           onClick={() => setStatus("idle")}
-          className="mt-6 rounded-sm border border-charcoal-foreground/40 px-6 py-2 text-sm font-semibold text-charcoal-foreground transition hover:border-gold hover:text-gold"
+          className="mt-6 rounded-sm border border-gold px-6 py-2 text-sm font-semibold text-charcoal-foreground transition hover:border-gold hover:text-gold"
         >
           Отправить ещё одну
-        </button>
+        </Button>
       </div>
     );
   }
@@ -82,7 +83,7 @@ export function FeedbackForm() {
           type="text"
           required
           disabled={status === "submitting"}
-          className="w-full rounded-sm border border-charcoal-foreground/20 bg-charcoal/50 px-4 py-3 text-sm text-charcoal-foreground placeholder:text-charcoal-foreground/40 transition focus:border-gold focus:outline-none disabled:opacity-50"
+          className="w-full rounded-sm border border-gold bg-charcoal/50 px-4 py-3 text-sm text-charcoal-foreground placeholder:text-charcoal-foreground/40 transition focus:border-gold focus:outline-none disabled:opacity-50"
           placeholder="Ваше имя"
         />
       </div>
@@ -98,7 +99,7 @@ export function FeedbackForm() {
             type="tel"
             required
             disabled={status === "submitting"}
-            className="w-full rounded-sm border border-charcoal-foreground/20 bg-charcoal/50 px-4 py-3 text-sm text-charcoal-foreground placeholder:text-charcoal-foreground/40 transition focus:border-gold focus:outline-none disabled:opacity-50"
+            className="w-full rounded-sm border border-gold bg-charcoal/50 px-4 py-3 text-sm text-charcoal-foreground placeholder:text-charcoal-foreground/40 transition focus:border-gold focus:outline-none disabled:opacity-50"
             placeholder="+7 (700) 000-00-00"
           />
         </div>
@@ -111,7 +112,7 @@ export function FeedbackForm() {
             name="email"
             type="email"
             disabled={status === "submitting"}
-            className="w-full rounded-sm border border-charcoal-foreground/20 bg-charcoal/50 px-4 py-3 text-sm text-charcoal-foreground placeholder:text-charcoal-foreground/40 transition focus:border-gold focus:outline-none disabled:opacity-50"
+            className="w-full rounded-sm border border-gold bg-charcoal/50 px-4 py-3 text-sm text-charcoal-foreground placeholder:text-charcoal-foreground/40 transition focus:border-gold focus:outline-none disabled:opacity-50"
             placeholder="you@example.com"
           />
         </div>
@@ -127,22 +128,22 @@ export function FeedbackForm() {
           required
           rows={4}
           disabled={status === "submitting"}
-          className="w-full rounded-sm border border-charcoal-foreground/20 bg-charcoal/50 px-4 py-3 text-sm text-charcoal-foreground placeholder:text-charcoal-foreground/40 transition focus:border-gold focus:outline-none disabled:opacity-50"
+          className="w-full rounded-sm border border-gold bg-charcoal/50 px-4 py-3 text-sm text-charcoal-foreground placeholder:text-charcoal-foreground/40 transition focus:border-gold focus:outline-none disabled:opacity-50"
           placeholder="Опишите объект и территорию, нуждающуюся в экспертизе"
         />
       </div>
 
       {status === "error" && (
-        <div className="flex items-center gap-2 rounded-sm border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+        <div className="flex items-center gap-2 rounded-sm border border-gold bg-charcoal px-4 py-3 text-sm text-gold">
           <AlertCircle className="h-4 w-4 shrink-0" />
           <span>{errorMsg}</span>
         </div>
       )}
 
-      <button
+      <Button
         type="submit"
         disabled={status === "submitting"}
-        className="inline-flex w-full items-center justify-center rounded-sm bg-gold px-6 py-3 text-sm font-semibold text-charcoal transition hover:bg-gold/90 disabled:cursor-not-allowed disabled:opacity-50"
+        className="inline-flex w-full items-center justify-center h-auto rounded-sm bg-gold px-6 py-3 text-sm font-semibold text-charcoal shadow-none transition hover:bg-gold-hover disabled:cursor-not-allowed disabled:opacity-50"
       >
         {status === "submitting" ? (
           <>
@@ -152,7 +153,7 @@ export function FeedbackForm() {
         ) : (
           "Отправить заявку"
         )}
-      </button>
+      </Button>
     </form>
   );
 }

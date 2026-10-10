@@ -27,6 +27,7 @@
   --color-charcoal: var(--charcoal);
   --color-charcoal-foreground: var(--charcoal-foreground);
   --color-gold: var(--gold);
+  --color-gold-hover: var(--gold-hover);
 }
 
 :root {
@@ -35,20 +36,21 @@
   --foreground: oklch(0.97 0.002 90);
   --card: oklch(0.28 0.008 280);
   --card-foreground: oklch(0.97 0.002 90);
-  --primary: oklch(0.72 0.13 75);
+  --primary: var(--gold);
   --primary-foreground: oklch(0.2 0.005 280);
   --secondary: oklch(0.31 0.008 280);
   --secondary-foreground: oklch(0.97 0.002 90);
   --muted: oklch(0.31 0.008 280);
   --muted-foreground: oklch(0.68 0.006 280);
-  --accent: oklch(0.72 0.13 75);
+  --accent: var(--gold);
   --accent-foreground: oklch(0.2 0.005 280);
-  --border: oklch(0.35 0.008 280);
+  --border: var(--gold);
   --input: oklch(0.35 0.008 280);
-  --ring: oklch(0.72 0.13 75);
+  --ring: var(--gold);
   --charcoal: oklch(0.21 0.008 280);
   --charcoal-foreground: oklch(0.97 0.002 90);
-  --gold: oklch(0.72 0.13 75);
+  --gold: #C5A059;
+  --gold-hover: color-mix(in srgb, var(--gold) 90%, var(--charcoal));
 }
 
 @layer base {
