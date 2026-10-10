@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function Logo({ className = "h-10 w-10" }: { className?: string }) {
+function Logo({ className = "h-[38px] w-[38px]" }: { className?: string }) {
   return <img src="/logo-transparent-c5a059.png" alt="Логотип ИКЭ" width={1024} height={1024} className={`${className} shrink-0 object-contain`} decoding="sync" />;
 }
 
@@ -261,8 +261,13 @@ function Index() {
       <footer className="border-t border-gold bg-charcoal text-charcoal-foreground/75">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3">
           <div>
-            <div className="flex items-center gap-3 text-charcoal-foreground"><Logo className="h-9 w-9" /><span className="font-bold">ИКЭ</span></div>
-            <p className="mt-4 text-sm">Историко-Культурная Экспертиза</p>
+            <div className="flex items-center gap-3 text-charcoal-foreground">
+              <Logo />
+              <span className="leading-tight">
+                <span className="block font-bold tracking-wide">ИКЭ</span>
+                <span className="block text-xs text-charcoal-foreground/70">Историко-Культурная Экспертиза</span>
+              </span>
+            </div>
           </div>
           <div className="space-y-3 text-sm">
             {contactLinks.map(({ I, label, href }) => (
