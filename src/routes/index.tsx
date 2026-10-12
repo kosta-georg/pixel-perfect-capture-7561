@@ -8,7 +8,7 @@ const contactLinks = [
   { I: Mail, name: "Почта", label: "info@archexpertise.kz", href: "mailto:info@archexpertise.kz" },
 ];
 import hero from "@/assets/hero.jpg";
-import logoAsset from "@/assets/logo-dark-c5a059.png.asset.json";
+import logoAsset from "@/assets/logo.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { FeedbackForm } from "@/components/feedback-form";
 
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Logo({ className = "h-9 w-9" }: { className?: string }) {
-  return <img src={logoAsset.url} alt="Логотип ИКЭ" width={1024} height={1024} className={`${className} shrink-0 object-contain`} decoding="async" />;
+  return <img src={logoAsset.url} alt="Логотип ИКЭ" width={512} height={512} className={`${className} logo-rendering shrink-0 object-contain`} decoding="async" />;
 }
 
 const nav = [

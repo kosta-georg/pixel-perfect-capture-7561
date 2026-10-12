@@ -58,3 +58,7 @@
   html { scroll-behavior: smooth; }
   body { background-color: var(--color-background); color: var(--color-foreground); font-family: var(--font-sans); }
 }
+
+@utility logo-rendering {
+  image-rendering: -webkit-optimize-contrast;
+}
