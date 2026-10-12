@@ -57,5 +57,8 @@
   * { border-color: var(--color-border); }
   html { scroll-behavior: smooth; }
   body { background-color: var(--color-background); color: var(--color-foreground); font-family: var(--font-sans); }
-  .logo-image { image-rendering: -webkit-optimize-contrast; }
+}
+
+@utility logo-rendering {
+  image-rendering: -webkit-optimize-contrast;
 }

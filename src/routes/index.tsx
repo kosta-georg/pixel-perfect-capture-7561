@@ -8,6 +8,7 @@ const contactLinks = [
   { I: Mail, name: "Почта", label: "info@archexpertise.kz", href: "mailto:info@archexpertise.kz" },
 ];
 import hero from "@/assets/hero.jpg";
+import logoAsset from "@/assets/logo.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { FeedbackForm } from "@/components/feedback-form";
 
@@ -25,8 +26,8 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function Logo({ className = "h-[38px] w-auto" }: { className?: string }) {
-  return <img src="/logo.png" alt="Логотип ИКЭ" width={512} height={512} className={`${className} logo-image shrink-0 object-contain`} decoding="sync" />;
+function Logo({ className = "h-9 w-9" }: { className?: string }) {
+  return <img src={logoAsset.url} alt="Логотип ИКЭ" width={512} height={512} className={`${className} logo-rendering shrink-0 object-contain`} decoding="async" />;
 }
 
 const nav = [
@@ -261,13 +262,8 @@ function Index() {
       <footer className="border-t border-gold bg-charcoal text-charcoal-foreground/75">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3">
           <div>
-            <div className="flex items-center gap-3 text-charcoal-foreground">
-              <Logo />
-              <span className="leading-tight">
-                <span className="block font-bold tracking-wide">ИКЭ</span>
-                <span className="block text-xs text-charcoal-foreground/70">Историко-Культурная Экспертиза</span>
-              </span>
-            </div>
+            <div className="flex items-center gap-3 text-charcoal-foreground"><Logo className="h-8 w-8" /><span className="font-bold">ИКЭ</span></div>
+            <p className="mt-4 text-sm">Историко-Культурная Экспертиза</p>
           </div>
           <div className="space-y-3 text-sm">
             {contactLinks.map(({ I, label, href }) => (

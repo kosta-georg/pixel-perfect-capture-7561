@@ -102,6 +102,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/logo.png", type: "image/png", sizes: "32x32" },
       { rel: "apple-touch-icon", href: "/logo.png", sizes: "180x180" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Историко-культурная и археологическая экспертиза в Казахстане",
+          url: "https://archexpertise.kz/",
+          logo: "https://archexpertise.kz/logo.png",
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -114,15 +126,6 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="ru">
       <head>
         <HeadContent />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Историко-культурная и археологическая экспертиза в Казахстане",
-            url: "https://archexpertise.kz/",
-            logo: "https://archexpertise.kz/logo.png",
-          })}
-        </script>
       </head>
       <body>
         {children}
