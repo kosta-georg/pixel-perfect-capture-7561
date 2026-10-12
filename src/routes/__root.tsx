@@ -80,12 +80,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Lovable App" },
       { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
+      { name: "author", content: "Историко-Культурная Экспертиза" },
       { property: "og:title", content: "Lovable App" },
       { property: "og:description", content: "Lovable Generated Project" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
       {
         name: "google-site-verification",
         content: "7o2N1GuibPmxGENfzfK6lTIbIT3fqkBBWZW75gfsDMM",
@@ -99,7 +98,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/logo-transparent-c5a059_(1).png", type: "image/png", sizes: "713x740" },
+      { rel: "icon", href: "/logo.png", type: "image/png", sizes: "512x512" },
+      { rel: "icon", href: "/logo.png", type: "image/png", sizes: "32x32" },
+      { rel: "apple-touch-icon", href: "/logo.png", sizes: "180x180" },
     ],
   }),
   shellComponent: RootShell,
@@ -113,6 +114,15 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="ru">
       <head>
         <HeadContent />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Историко-культурная и археологическая экспертиза в Казахстане",
+            url: "https://archexpertise.kz/",
+            logo: "https://archexpertise.kz/logo.png",
+          })}
+        </script>
       </head>
       <body>
         {children}

@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Logo({ className = "h-[38px] w-auto" }: { className?: string }) {
-  return <img src="/logo-transparent-c5a059_(1).png" alt="Логотип ИКЭ" width={713} height={740} className={`${className} shrink-0 object-contain`} decoding="sync" />;
+  return <img src="/logo.png" alt="Логотип ИКЭ" width={512} height={512} className={`${className} logo-image shrink-0 object-contain`} decoding="sync" />;
 }
 
 const nav = [
