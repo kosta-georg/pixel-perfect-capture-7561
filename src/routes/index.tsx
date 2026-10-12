@@ -8,7 +8,6 @@ const contactLinks = [
   { I: Mail, name: "Почта", label: "info@archexpertise.kz", href: "mailto:info@archexpertise.kz" },
 ];
 import hero from "@/assets/hero.jpg";
-import logoAsset from "@/assets/logo.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { FeedbackForm } from "@/components/feedback-form";
 
@@ -27,7 +26,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Logo({ className = "h-9 w-9" }: { className?: string }) {
-  return <img src={logoAsset.url} alt="Логотип ИКЭ" width={512} height={512} className={`${className} logo-rendering shrink-0 object-contain`} decoding="async" />;
+  return <img src="/logo.png" alt="Логотип ИКЭ" width={512} height={512} className={`${className} logo-rendering shrink-0 object-contain`} decoding="async" />;
 }
 
 const nav = [
@@ -138,7 +137,7 @@ function Index() {
     <div className="min-h-screen">
       <header className="sticky top-0 z-50 border-b border-gold bg-charcoal/95 text-charcoal-foreground backdrop-blur">
         <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-6 px-6 py-3">
-          <a href="#" className="flex items-center gap-3">
+          <a href="#" className="flex flex-row items-center gap-3">
             <Logo />
             <span className="leading-tight">
               <span className="block text-lg font-bold tracking-wide">ИКЭ</span>
@@ -262,7 +261,7 @@ function Index() {
       <footer className="border-t border-gold bg-charcoal text-charcoal-foreground/75">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3">
           <div>
-            <div className="flex items-center gap-3 text-charcoal-foreground"><Logo className="h-8 w-8" /><span className="font-bold">ИКЭ</span></div>
+            <div className="flex flex-row items-center gap-3 text-charcoal-foreground"><Logo className="h-8 w-8" /><span className="font-bold">ИКЭ</span></div>
             <p className="mt-4 text-sm">Историко-Культурная Экспертиза</p>
           </div>
           <div className="space-y-3 text-sm">
