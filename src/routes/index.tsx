@@ -29,7 +29,9 @@ function Logo({ className = "h-9 w-9" }: { className?: string }) {
     <img 
       src="/logo.png" 
       alt="ИКЭ Логотип" 
-      className={`${className} object-contain`} 
+      width={512}
+      height={512}
+      className={`${className} logo-rendering shrink-0 object-contain`} 
     />
   );
 }
@@ -148,7 +150,7 @@ function Index() {
             </span>
           </a>
           <nav className="hidden gap-8 text-sm md:flex">
-            {nav.map(([l, h]) => (
+            {navLinks.map(([l, h]) => (
               <a key={h} href={h} className="text-charcoal-foreground/80 transition hover:text-gold">{l}</a>
             ))}
           </nav>
