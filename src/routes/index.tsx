@@ -33,12 +33,12 @@ function Logo({ className = "h-9 w-9" }: { className?: string }) {
     />
   );
 }
+const navLinks = [
   ["Эксперты", "#about"],
   ["Законы", "#laws"],
   ["Экспертиза", "#services"],
   ["Контакты", "#contacts"],
 ];
-
 const laws: { t: string; a?: string; p: (string | string[])[] }[] = [
   {
     t: "Закон Республики Казахстан «Об охране и использовании объектов историко-культурного наследия» от 26 декабря 2019 года № 288-VI ЗРК",
