@@ -10,7 +10,6 @@ const contactLinks = [
 import hero from "@/assets/hero.jpg";
 import { Button } from "@/components/ui/button";
 import { FeedbackForm } from "@/components/feedback-form";
-import logoImg from "../assets/logo.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
