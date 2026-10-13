@@ -26,9 +26,14 @@ export const Route = createFileRoute("/")({
 });
 
 function Logo({ className = "h-9 w-9" }: { className?: string }) {
- return <img src={logoImg} alt="Логотип ИКЭ" width={512} height={512} className={`${className} logo-rendering shrink-0 object-contain`} decoding="async" />
-
-const nav = [
+  return (
+    <img 
+      src="/logo.png" 
+      alt="ИКЭ Логотип" 
+      className={`${className} object-contain`} 
+    />
+  );
+}
   ["Эксперты", "#about"],
   ["Законы", "#laws"],
   ["Экспертиза", "#services"],
