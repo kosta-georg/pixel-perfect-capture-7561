@@ -10,7 +10,7 @@ const contactLinks = [
 import hero from "@/assets/hero.jpg";
 import { Button } from "@/components/ui/button";
 import { FeedbackForm } from "@/components/feedback-form";
-
+import logoImg from "/logo.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -26,8 +26,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Logo({ className = "h-9 w-9" }: { className?: string }) {
-  return <img src="/logo.png" alt="Логотип ИКЭ" width={512} height={512} className={`${className} logo-rendering shrink-0 object-contain`} decoding="async" />;
-}
+ return <img src={logoImg} alt="Логотип ИКЭ" width={512} height={512} className={`${className} logo-rendering shrink-0 object-contain`} decoding="async" />
 
 const nav = [
   ["Эксперты", "#about"],
